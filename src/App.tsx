@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TaskList from './components/TaskList';
+import { Item } from './models/item';
+import TaskForm from './components/TaskForm';
 
 function App() {
-  const items = [
-    { id: 1, name: "เขียนโปรแกรม" },
-    { id: 2, name: "ไปตลาด" },
-    { id: 3, name: "อาบน้ำหมา" }
-  ]
+ const [items,setItems] = useState<Item[]>([])
   return (
     <div className="App">
+      <TaskForm />
       <TaskList items={items} />
     </div>
   );
