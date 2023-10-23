@@ -10,8 +10,8 @@ export default function TaskList(props: TaskListProp): JSX.Element {
         <div>
             <h1>งานที่ต้องทำในวันนี้</h1>
             <ul>
-                {props.items.map((element) => (
-                    <li key={element.id}>{element.name}</li>
+                {props.items.map((element,index) => (
+                    <li key={index}>{element.name}</li>
                 ))}
             </ul>
         </div>

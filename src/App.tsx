@@ -4,10 +4,19 @@ import { Item } from './models/item';
 import TaskForm from './components/TaskForm';
 
 function App() {
- const [items,setItems] = useState<Item[]>([])
+  const [items, setItems] = useState<Item[]>([])
+  function generateID() {
+    //0-99
+    return Math.floor(Math.random() * 1000)
+  }
+
+  const addItem = (name: string) => {
+    setItems([...items, { id: generateID(), name }])
+  }
+
   return (
     <div className="App">
-      <TaskForm />
+      <TaskForm onAddItem={addItem} />
       <TaskList items={items} />
     </div>
   );
